@@ -1,0 +1,10 @@
+// Sample Segment Mapping Concept: HL7v2 PID to FHIR Patient Resource
+package hl7_to_fhir_r4
+
+def MapPatient(PID) {
+  resourceType: "Patient"
+  id: PID.3.1
+  identifier: MapIdentifiers(PID.3)
+  name: MapNames(PID.5)
+  gender: MapGender(PID.8)
+}
